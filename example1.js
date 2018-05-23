@@ -11,3 +11,5 @@ function getDateTime() {
     return hour + ":" + min ;
 
 }
+
+console.log(getDateTime);
