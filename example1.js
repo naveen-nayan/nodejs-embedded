@@ -1,6 +1,4 @@
-
-
-var time = function getDateTime() {
+function getDateTime() {
 
     var date = new Date();
 
@@ -10,8 +8,8 @@ var time = function getDateTime() {
     var min  = date.getMinutes();
     min = (min < 10 ? "0" : "") + min;
 
-    return hour + ":" + min ;
+    console.log(hour + ":" + min) ;
 
 }
 
-console.log(time);
+getDateTime()
