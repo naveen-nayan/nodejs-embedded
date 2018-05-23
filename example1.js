@@ -1,4 +1,6 @@
-function getDateTime() {
+
+
+var time = function getDateTime() {
 
     var date = new Date();
 
@@ -12,4 +14,4 @@ function getDateTime() {
 
 }
 
-console.log(getDateTime);
+console.log(time);
