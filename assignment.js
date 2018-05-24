@@ -25,6 +25,7 @@ function onOffLogic(){
   current_time = getTime()
   if (current_time > start_time && current_time < off_time){
     current_temp = readTemperature()
+    console.log(current_temp)
     if (current_temp > temperature_limit)
       console.log(current_temp)
     else
