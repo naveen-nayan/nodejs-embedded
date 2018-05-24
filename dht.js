@@ -1,5 +1,12 @@
-var dht = require('dht-sensor');
-var current = dht.read(11, 18); // 11 : DHT11, 18 : BCM GPIO
+var rpiDhtSensor = require('rpi-dht-sensor');
 
-console.log(current.humidity);
-console.log(current.temperature);
+var dht = new rpiDhtSensor.DHT22(2);
+
+function read () {
+  var readout = dht.read();
+
+    console.log('Temperature: ' + readout.temperature.toFixed(2) + 'C, ' +
+        'humidity: ' + readout.humidity.toFixed(2) + '%');
+    setTimeout(read, 5000);
+}
+read();
