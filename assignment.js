@@ -25,11 +25,11 @@ function onOffLogic(){
   current_time = getTime()
   if (current_time > start_time && current_time < off_time){
     current_temp = readTemperature()
-    console.log(current_temp)
+//    console.log(current_temp)
     if (current_temp > temperature_limit)
-      console.log(current_temp)
+      console.log("Current Temperature :" + current_temp + "C")
     else
-      console.log("Temperatue is lower");
+      console.log("Temperatue is lower than 27.00");
    }
   else
     console.log("Time is out off bound");
