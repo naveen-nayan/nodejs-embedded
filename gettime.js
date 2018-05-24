@@ -1,7 +1,7 @@
 function getDateTime() {
 
     var date = new Date();
-
+    
     var hour = date.getHours();
     hour = (hour < 10 ? "0" : "") + hour;
     console.log(hour);
