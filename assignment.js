@@ -40,7 +40,7 @@ function onOffLogic(){
 
       master.readHoldingRegisters(28, 0, 0).then((data) => {
       var reg_data = data;
-      if (reg_data == "0")
+      if (reg_data[0] == "0")
          master.writeSingleRegister(28, 0, 1);
         }, (err) => {
         });
@@ -48,7 +48,7 @@ function onOffLogic(){
       console.log("Temperatue is lower than 27.00");
       master.readHoldingRegisters(28, 0, 0).then((data) => {
       var reg_data = data;
-      if (reg_data == "1")
+      if (reg_data[0] == "1")
          master.writeSingleRegister(28, 0, 0);
    }
   else
