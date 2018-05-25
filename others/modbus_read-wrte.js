@@ -12,4 +12,4 @@ master.readHoldingRegisters(28, 0, 0).then((data) => {
 }, (err) => {
 });
 
-master.writeSingleRegister(28, 2, 1);
+master.writeSingleRegister(28, 0, 1);

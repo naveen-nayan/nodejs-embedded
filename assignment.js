@@ -18,18 +18,38 @@ function readTemperature() {
   return temperature
 };
 
+// modbus configured assumed on USB0 and baud 9600
+const SerialPort = require('serialport');
+const ModbusMaster = require('modbus-rtu').ModbusMaster;
+
+const serialPort = new SerialPort("/dev/ttyUSB0", {
+   baudRate: 9600
+});
+const master = new ModbusMaster(serialPort);
+
+
 function onOffLogic(){
-  start_time = "00:00"
+  start_time = "10:00"
   off_time = "17:00"
   temperature_limit = "27.00"
   current_time = getTime()
   if (current_time > start_time && current_time < off_time){
     current_temp = readTemperature()
-//    console.log(current_temp)
     if (current_temp > temperature_limit)
       console.log("Current Temperature :" + current_temp + "C")
+
+      master.readHoldingRegisters(28, 0, 0).then((data) => {
+      var reg_data = data;
+      if (reg_data == "0")
+         master.writeSingleRegister(28, 0, 1);
+        }, (err) => {
+        });
     else
       console.log("Temperatue is lower than 27.00");
+      master.readHoldingRegisters(28, 0, 0).then((data) => {
+      var reg_data = data;
+      if (reg_data == "1")
+         master.writeSingleRegister(28, 0, 0);
    }
   else
     console.log("Time is out off bound");
