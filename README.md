@@ -21,7 +21,6 @@ Energy savings and other benefits are then proven to build a business case which
 ## How Wattman Work
 |![Wattman working](https://github.com/naveen-nayan/nodejs-embedded/blob/master/image/wattmanworking.png "Wattman Woring") |
 |:--:| 
-| *Wattman Working* | 
-Wattman used to sense differnt parametes like energy, temperature, Ground voltage, UPS battery voltage, DVR+ Camera Health, Weather API
-and with the help of differnet logic based on data, it controls ACs, Exhaust, ATM using relay and contractor it also provide a dashboard 
-where all used case and data can be seen and changed to users.
+| *Wattman Working* |   
+
+Wattman used to sense differnt parametes like energy, temperature, Ground voltage, UPS battery voltage, DVR+ Camera Health, Weather API and with the help of differnet logic based on data, it controls ACs, Exhaust, ATM using relay and contractor it also provide a dashboard where all used case and data can be seen and changed to users.
